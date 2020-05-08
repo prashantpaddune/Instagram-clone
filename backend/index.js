@@ -4,10 +4,13 @@ const app = express()
 const mongoose = require('mongoose');
 
 // Routes
-const exampleRoute = require('./routes/example');
+const authRoute = require('./routes/auth');
+
+//Port
+const Port = process.env.PORT;
 
 //Mongoose
-const db = process.env.MONGODB_URI
+const db = process.env.MONGODB_URI;
 
 mongoose.connect(db, {
         useNewUrlParser: true,
@@ -22,7 +25,8 @@ mongoose.connect(db, {
     });
 
 // Routes used
-app.use(exampleRoute);
+app.use(express.json())
+app.use(authRoute);
 
 //Port
-app.listen(process.env.PORT, () => console.log(`App listening at http://localhost:${process.env.PORT}`));
+app.listen(Port, () => console.log(`App listening at http://localhost:${Port}`));
