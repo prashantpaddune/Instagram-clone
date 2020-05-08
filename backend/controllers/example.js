@@ -1,0 +1,1 @@
+exports.example = (req, res) => res.send('Hello World!');
