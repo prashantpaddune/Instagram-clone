@@ -23,7 +23,6 @@ function Login() {
                 <h6>
                     <Link to="/reset">Forgot password ?</Link>
                 </h6>
-
             </div>
         </div>
     );
