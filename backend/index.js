@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 // Routes
 const authRoute = require('./routes/auth');
+const postRoute = require('./routes/post');
 
 //Port
 const Port = process.env.PORT;
@@ -27,6 +28,7 @@ mongoose.connect(db, {
 // Routes used
 app.use(express.json())
 app.use(authRoute);
+app.use(postRoute);
 
 //Port
 app.listen(Port, () => console.log(`App listening at http://localhost:${Port}`));

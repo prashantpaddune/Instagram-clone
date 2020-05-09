@@ -88,10 +88,6 @@ exports.signOut = (req, res) => {
     //
 }
 
-exports.protectedRoute = (req, res) => {
-   res.send("hello")
-}
-
 //middleware
 exports.isAuthenticated = (req, res, next) => {
     const {authorization} = req.headers
