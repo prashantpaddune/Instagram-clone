@@ -5,6 +5,7 @@ import Home from "./components/screens/Home";
 import Login from "./components/screens/Login";
 import Signup from "./components/screens/Signup";
 import Profile from "./components/screens/Profile";
+import CreatePost from "./components/screens/CreatePost";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
               <Route path="/signin" exact component={Login} />
               <Route path="/signup" exact component={Signup} />
               <Route path="/profile" exact component={Profile} />
+              <Route path="/create" exact component={CreatePost} />
           </Switch>
       </BrowserRouter>
   );
