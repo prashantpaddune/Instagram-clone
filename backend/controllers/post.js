@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Post = require('../models/post');
 
 exports.createPost = (req, res) => {
-    const {title,body} = req.body
+    const {title,body, image} = req.body
 
-    if(!title || !body) {
+    if(!title || !body || !image) {
         return res.status(422).json({
             error:"Please add all the fields"
         })
@@ -14,7 +14,7 @@ exports.createPost = (req, res) => {
     const post = new Post({
         title,
         body,
-        // photo:pic,
+        photo:image,
         postedBy:req.user
     })
 

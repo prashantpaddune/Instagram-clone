@@ -94,7 +94,7 @@ exports.isAuthenticated = (req, res, next) => {
             error:"you must be logged in"
         })
     }
-    const jwtToken = process.env.SECRET;
+    const jwtToken = config.SECRET;
     const token = authorization.replace("Bearer ","")
 
     jwt.verify(token,jwtToken,(err,payload) => {
