@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const config = require('../dev');
 
 exports.signUp = (req, res) => {
     const {name, email, password} = req.body;
@@ -58,13 +59,16 @@ exports.signIn = (req, res) => {
                         // return res.status(400).json({
                         //     messege: 'Successfully Signed In'
                         // })
-                        const jwtToken = process.env.SECRET;
+                        const jwtToken = config.SECRET
 
                         const token = jwt.sign({
                             _id: savedUser._id
                         }, jwtToken)
-                        return res.status(400).json({
-                            token
+
+                        const {_id, name, email} = savedUser
+                        res.json({
+                            token,
+                            user: {_id, name, email}
                         })
                     }
                     else {
