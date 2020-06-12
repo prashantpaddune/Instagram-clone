@@ -26,18 +26,11 @@ exports.signUp = (req, res) => {
                     name
                 })
 
-                user.save((err, user) => {
-                    if (err) {
-                        return res.status(400).json({
-                            err: 'Failed to Save User in DB!'
-                        });
-                    }
-                    res.json({
-                        id: user._id,
-                        name: user.name,
-                        email: user.email
-                    });
-                });
+                user.save()
+                    .then(user=>{
+                        res.json({message:"User Created Successfully"})
+                    })
+                    .catch(err => console.log(err))
             })
         })
         .catch(err => console.log(err));
@@ -70,7 +63,7 @@ exports.signIn = (req, res) => {
                         const token = jwt.sign({
                             _id: savedUser._id
                         }, jwtToken)
-                        res.json({
+                        return res.status(400).json({
                             token
                         })
                     }
