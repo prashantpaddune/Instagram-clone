@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import M from "materialize-css";
 
 const CreatePost = () => {
@@ -48,7 +48,7 @@ const CreatePost = () => {
             .then(data => {
                 setUrl(data.url)
             })
-            .catch(err =>console.log(err))
+            .catch(err => console.log(err))
     }
 
     return (
@@ -67,7 +67,7 @@ const CreatePost = () => {
             />
             <div className="file-field input-field">
                 <div className="btn #64b5f6 blue darken-1">
-                    <span>Uplaod Image</span>
+                    <span>Upload Image</span>
                     <input type="file" onChange={(event) => setImage(event.target.files[0])} />
                 </div>
                 <div className="file-path-wrapper">
