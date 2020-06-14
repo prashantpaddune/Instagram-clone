@@ -1,31 +1,40 @@
-require('dotenv').config();
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose');
-const config = require('./dev');
+const mongoose  = require('mongoose')
+const PORT = process.env.PORT || 5000
+const {MONGOURI} = require('./config/keys')
 
-// Routes
-const authRoute = require('./routes/auth');
-const postRoute = require('./routes/post');
-const userRoute = require('./routes/user');
 
-mongoose.connect(config.DB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    })
-    .then(() => {
-        console.log('DB CONNECTS SUCCESSFULLY');
-    })
-    .catch((error) => {
-        console.error('DB GOT CRASH');
-    });
+mongoose.connect(MONGOURI,{
+    useNewUrlParser:true,
+    useUnifiedTopology: true
 
-// Routes used
+})
+mongoose.connection.on('connected',()=>{
+    console.log("DB CONNECTS SUCCESSFULLY")
+})
+mongoose.connection.on('error',(err)=>{
+    console.log("err connecting",err)
+})
+
+require('./models/user')
+require('./models/post')
+
 app.use(express.json())
-app.use(authRoute);
-app.use(postRoute);
-app.use(userRoute);
+app.use(require('./routes/auth'))
+app.use(require('./routes/post'))
+app.use(require('./routes/user'))
 
-//Port
-app.listen(config.PORT, () => console.log(`App listening at http://localhost:${config.PORT}`));
+
+if(process.env.NODE_ENV==="production"){
+    app.use(express.static('client/build'))
+    const path = require('path')
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+    })
+}
+
+app.listen(PORT,()=>{
+    console.log("server is running on",PORT)
+})
+
