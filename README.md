@@ -20,7 +20,16 @@ This repository is still under development.
 
 
 <p>
-<img src="https://user-images.githubusercontent.com/35039342/55468409-ef956b80-5620-11e9-9906-7e8ca89b4b49.png" alt="feed example" width = "400" >
+<img src="https://github.com/prashantpaddune/Instagram-clone/blob/master/screenshots/Screenshot%20from%202020-06-14%2023-35-50.png?raw=true">
+<img src="https://github.com/prashantpaddune/Instagram-clone/blob/master/screenshots/Screenshot%20from%202020-06-14%2023-36-08.png?raw=true">
+<img src="https://github.com/prashantpaddune/Instagram-clone/blob/master/screenshots/Screenshot%20from%202020-06-14%2023-36-57.png?raw=true">
+<img src="https://github.com/prashantpaddune/Instagram-clone/blob/master/screenshots/Screenshot%20from%202020-06-14%2023-41-33.png?raw=true">
+
+<img src="https://github.com/prashantpaddune/Instagram-clone/blob/master/screenshots/Screenshot%20from%202020-06-14%2023-43-03.png?raw=true">
+<img src="https://github.com/prashantpaddune/Instagram-clone/blob/master/screenshots/Screenshot%20from%202020-06-14%2023-42-53.png?raw=true">
+<img src="https://github.com/prashantpaddune/Instagram-clone/blob/master/screenshots/Screenshot%20from%202020-06-14%2023-41-33.png?raw=true">
+<img src="https://github.com/prashantpaddune/Instagram-clone/blob/master/screenshots/Screenshot%20from%202020-06-14%2023-43-08.png?raw=true">
+<img src="https://github.com/prashantpaddune/Instagram-clone/blob/master/screenshots/Screenshot%20from%202020-06-14%2023-43-26.png?raw=true">
 </p>
 
 
