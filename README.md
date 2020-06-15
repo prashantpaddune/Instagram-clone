@@ -72,3 +72,7 @@ npm start
 3. Make required changes and commit (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
 5. Create new Pull Request
+
+## License
+
+This project is licensed under the GNU General Public License v3.0
